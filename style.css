@@ -2871,7 +2871,7 @@ th {
   position: relative;
   margin-top: 2.4rem;
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 0.8rem;
 }
 
@@ -3149,9 +3149,6 @@ th {
     display: none;
   }
 
-  .learning-step:last-child {
-    grid-column: 1 / -1;
-  }
 }
 
 @media (max-width: 620px) {
@@ -3171,5 +3168,252 @@ th {
 
   .learning-panel-heading {
     align-items: flex-start;
+  }
+}
+
+
+/* Project Water — AILit learning-goals extension */
+#leren .feature-grid {
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+}
+
+.step-card-ai,
+.learning-step-ai {
+  border-color: rgba(3, 221, 239, 0.55);
+}
+
+.step-card-ai {
+  background:
+    linear-gradient(145deg, rgba(82, 0, 255, 0.055), rgba(3, 221, 239, 0.08)),
+    #ffffff;
+}
+
+.framework-legend {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.framework-legend-card {
+  display: grid;
+  gap: 0.45rem;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 1rem 1.1rem;
+  background: #ffffff;
+  box-shadow: var(--card-shadow);
+}
+
+.framework-legend-card-ai {
+  border-color: rgba(3, 221, 239, 0.42);
+  background:
+    linear-gradient(145deg, rgba(82, 0, 255, 0.04), rgba(3, 221, 239, 0.07)),
+    #ffffff;
+}
+
+.framework-legend-card strong {
+  color: var(--ink);
+  font-size: 1rem;
+}
+
+.framework-legend-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.framework-badge,
+.subject-label,
+.ailit-code {
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0.28rem 0.58rem;
+  background: var(--brand-soft);
+  color: var(--brand-dark);
+  font-size: 0.72rem;
+  font-weight: 850;
+  letter-spacing: 0.02em;
+}
+
+.framework-badge-ai,
+.subject-label-ai {
+  background: rgba(3, 221, 239, 0.14);
+  color: #006d72;
+}
+
+.subject-label {
+  margin-bottom: 0.1rem;
+}
+
+.learning-step-ai.is-active {
+  border-color: #03ddef;
+  box-shadow: 0 0 0 4px rgba(3, 221, 239, 0.11), 0 18px 40px rgba(82, 0, 255, 0.11);
+}
+
+.learning-panel-number-ai {
+  background: linear-gradient(135deg, var(--brand), #03ddef);
+}
+
+.ai-method-note {
+  margin-bottom: 1rem;
+  border: 1px solid rgba(3, 221, 239, 0.32);
+  border-radius: 16px;
+  padding: 1rem 1.1rem;
+  background: rgba(3, 221, 239, 0.07);
+}
+
+.ai-method-note strong {
+  color: var(--ink);
+}
+
+.ai-method-note p {
+  margin: 0.4rem 0 0;
+  color: #51495f;
+  line-height: 1.6;
+}
+
+.subject-accordion-ai {
+  border-color: rgba(3, 221, 239, 0.36);
+}
+
+.subject-detail-grid-three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.subject-detail-grid-three article:nth-child(3) {
+  background: rgba(82, 0, 255, 0.045);
+}
+
+.ailit-goals {
+  margin-top: 0.9rem;
+  border-top: 1px solid var(--line);
+  padding-top: 1rem;
+}
+
+.ailit-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.85rem;
+}
+
+.ailit-heading h3 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 1rem;
+}
+
+.ailit-heading p {
+  margin: 0.25rem 0 0;
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.ailit-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.ailit-card {
+  display: grid;
+  align-content: start;
+  gap: 0.45rem;
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  padding: 0.9rem;
+  background: #ffffff;
+}
+
+.ailit-card.is-core {
+  border-color: rgba(82, 0, 255, 0.27);
+  background:
+    linear-gradient(145deg, rgba(82, 0, 255, 0.055), rgba(3, 221, 239, 0.055)),
+    #ffffff;
+}
+
+.ailit-card strong {
+  color: var(--ink);
+  font-size: 0.92rem;
+}
+
+.ailit-card p {
+  margin: 0;
+  color: #51495f;
+  font-size: 0.86rem;
+  line-height: 1.55;
+}
+
+.ailit-code {
+  background: rgba(3, 221, 239, 0.14);
+  color: #006d72;
+}
+
+.ailit-card.is-core .ailit-code {
+  background: var(--brand-soft);
+  color: var(--brand-dark);
+}
+
+.ailit-boundary,
+.curriculum-goals-ai {
+  margin-top: 0.85rem;
+  border-left: 5px solid #03ddef;
+  border-radius: 14px;
+  padding: 0.9rem 1rem;
+  background: rgba(3, 221, 239, 0.065);
+}
+
+.ailit-boundary strong {
+  color: var(--ink);
+}
+
+.ailit-boundary p {
+  margin: 0.35rem 0 0;
+  color: #51495f;
+  line-height: 1.58;
+}
+
+.learning-source-note a {
+  color: var(--brand);
+  font-weight: 750;
+}
+
+@media (max-width: 1120px) {
+  .learning-flow {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .learning-flow::before {
+    display: none;
+  }
+
+  .ailit-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .framework-legend,
+  .subject-detail-grid-three,
+  .ailit-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .learning-flow {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .learning-flow {
+    grid-template-columns: 1fr;
+  }
+
+  .learning-step {
+    grid-column: auto;
   }
 }

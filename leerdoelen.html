@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Project Water · Taken en leerplandoelen</title>
+  <title>Project Water · Leerdoelen</title>
   <meta
     name="description"
-    content="Interactief overzicht van de projectstappen, vakken, kennis, vaardigheden en leerplandoelen van Project Water."
+    content="Interactief overzicht van de projectstappen, vakleerplandoelen en AI-geletterdheidscompetenties binnen Project Water."
   />
-  <link rel="stylesheet" href="style.css" />
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="shortcut icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body class="landing-page learning-page">
@@ -52,12 +52,26 @@
 
   <main id="main">
     <section class="section learning-overview">
-      <p class="section-kicker">Projectflow</p>
-      <h1 class="section-title">Van waterstaal tot besluit</h1>
+      <p class="section-kicker">Leerdoelen</p>
+      <h1 class="section-title">Wat leren leerlingen tijdens Project Water?</h1>
       <p class="section-lead">
-        Klik op een stap om te zien welke vakken eraan gekoppeld zijn.
-        Open daarna een vak voor de kennis, vaardigheden en leerplandoelen.
+        Kies een projectstap. Je ziet welke vakleerplannen of aanvullende competentiekaders eraan gekoppeld zijn.
+        Open daarna een kaart voor de kennis, vaardigheden en bijbehorende doelen.
       </p>
+
+      <div class="framework-legend" aria-label="Gebruikte kaders">
+        <article class="framework-legend-card">
+          <span class="framework-badge">Vakleerplannen</span>
+          <strong>Formele leerplandoelen</strong>
+          <p>Natuurwetenschappen, Informaticawetenschappen en Mens &amp; samenleving.</p>
+        </article>
+
+        <article class="framework-legend-card framework-legend-card-ai">
+          <span class="framework-badge framework-badge-ai">Aanvullend kader</span>
+          <strong>AI-geletterdheid · AILit Framework</strong>
+          <p>Gezamenlijk kader van OECD en Europese Commissie. Geen afzonderlijk Vlaams vakleerplan.</p>
+        </article>
+      </div>
 
       <div class="learning-flow" aria-label="Stappen van Project Water">
         <button class="learning-step" type="button" data-step-target="verzamelen" aria-expanded="false">
@@ -88,15 +102,23 @@
           <span class="learning-step-number">4</span>
           <span class="learning-step-copy">
             <strong>Analyseren</strong>
-            <span>Klassendata vergelijken</span>
+            <span>Klassendata zelf onderzoeken</span>
+          </span>
+        </button>
+
+        <button class="learning-step learning-step-ai" type="button" data-step-target="ai" aria-expanded="false">
+          <span class="learning-step-number">5</span>
+          <span class="learning-step-copy">
+            <strong>Vergelijken met AI</strong>
+            <span>Clusters en beslisboom onderzoeken</span>
           </span>
         </button>
 
         <button class="learning-step" type="button" data-step-target="reflecteren" aria-expanded="false">
-          <span class="learning-step-number">5</span>
+          <span class="learning-step-number">6</span>
           <span class="learning-step-copy">
             <strong>Reflecteren</strong>
-            <span>Hypothese en besluit vergelijken</span>
+            <span>Resultaten begrenzen en besluiten</span>
           </span>
         </button>
       </div>
@@ -104,7 +126,7 @@
       <div class="learning-detail-shell">
         <div class="learning-empty" id="learningEmpty">
           <strong>Kies een stap.</strong>
-          <span>De gekoppelde vakken verschijnen hier.</span>
+          <span>De gekoppelde vakken en competentiekaders verschijnen hier.</span>
         </div>
 
         <section class="learning-step-panel" id="step-verzamelen" hidden>
@@ -120,6 +142,7 @@
             <details class="subject-accordion">
               <summary>
                 <span>
+                  <span class="subject-label">Vakleerplan</span>
                   <strong>Natuurwetenschappen</strong>
                   <small>Onderzoek opzetten en gegevens verzamelen</small>
                 </span>
@@ -157,6 +180,7 @@
             <details class="subject-accordion">
               <summary>
                 <span>
+                  <span class="subject-label">Vakleerplan</span>
                   <strong>Natuurwetenschappen</strong>
                   <small>pH, meetnauwkeurigheid en veilig werken</small>
                 </span>
@@ -169,7 +193,7 @@
                   </article>
                   <article>
                     <h3>Vaardigheden</h3>
-                    <p>Een pH-sensor correct gebruiken, herhaalmetingen uitvoeren en meetwaarden zorgvuldig registreren.</p>
+                    <p>Een pH-sensor correct gebruiken, metingen controleren en meetwaarden zorgvuldig registreren.</p>
                   </article>
                 </div>
                 <div class="curriculum-goals">
@@ -196,6 +220,7 @@
             <details class="subject-accordion">
               <summary>
                 <span>
+                  <span class="subject-label">Vakleerplan</span>
                   <strong>Informaticawetenschappen</strong>
                   <small>Algoritmen, controlestructuren, testen en debuggen</small>
                 </span>
@@ -204,7 +229,7 @@
                 <div class="subject-detail-grid">
                   <article>
                     <h3>Kennis</h3>
-                    <p>Algoritme, sequentie, selectie en iteratie. In het project werken leerlingen ook met lijsten, tellers en variabelen.</p>
+                    <p>Algoritme, sequentie, selectie en iteratie. In het project werken leerlingen ook met variabelen, lijsten en tellers.</p>
                   </article>
                   <article>
                     <h3>Vaardigheden</h3>
@@ -226,7 +251,7 @@
             <span class="learning-panel-number">4</span>
             <div>
               <p class="section-kicker">Analyseren</p>
-              <h2>Verschillen en patronen in de data zoeken</h2>
+              <h2>Eerst zelf patronen en verschillen onderzoeken</h2>
             </div>
           </div>
 
@@ -234,19 +259,20 @@
             <details class="subject-accordion">
               <summary>
                 <span>
+                  <span class="subject-label">Vakleerplan</span>
                   <strong>Informaticawetenschappen</strong>
-                  <small>Code gebruiken om klassendata te vergelijken</small>
+                  <small>Code gebruiken om klassendata te verwerken</small>
                 </span>
               </summary>
               <div class="subject-body">
                 <div class="subject-detail-grid">
                   <article>
                     <h3>Kennis</h3>
-                    <p>Iteratie en selectie als bouwstenen om waarden te doorlopen, te vergelijken en te classificeren.</p>
+                    <p>Iteratie en selectie als bouwstenen om waarden te doorlopen, vergelijken, tellen en classificeren.</p>
                   </article>
                   <article>
                     <h3>Vaardigheden</h3>
-                    <p>Code schrijven die lijsten verwerkt, telt, vergelijkt en resultaten controleerbaar maakt.</p>
+                    <p>Code schrijven die lijsten verwerkt en resultaten controleerbaar maakt.</p>
                   </article>
                 </div>
                 <div class="curriculum-goals">
@@ -260,6 +286,7 @@
             <details class="subject-accordion">
               <summary>
                 <span>
+                  <span class="subject-label">Vakleerplan</span>
                   <strong>Natuurwetenschappen</strong>
                   <small>Meetgegevens analyseren en een hypothese toetsen</small>
                 </span>
@@ -285,12 +312,154 @@
           </div>
         </section>
 
+        <section class="learning-step-panel" id="step-ai" hidden>
+          <div class="learning-panel-heading">
+            <span class="learning-panel-number learning-panel-number-ai">5</span>
+            <div>
+              <p class="section-kicker">Vergelijken met AI</p>
+              <h2>Een datagedreven model naast de eigen analyse leggen</h2>
+            </div>
+          </div>
+
+          <div class="ai-method-note">
+            <strong>De AI krijgt geen labels zoals “goed” of “slecht”.</strong>
+            <p>
+              K-means zoekt groepen op basis van gelijkenis tussen meetwaarden. Daarna wordt een kleine
+              beslisboom getraind om die groepen zo transparant mogelijk te verklaren. De beslisboom is dus
+              een uitlegmodel voor de clustering, niet het model dat de clusters oorspronkelijk vond.
+            </p>
+          </div>
+
+          <div class="subject-list">
+            <details class="subject-accordion subject-accordion-ai">
+              <summary>
+                <span>
+                  <span class="subject-label subject-label-ai">Aanvullend competentiekader</span>
+                  <strong>AI-geletterdheid · AILit Framework</strong>
+                  <small>OECD + Europese Commissie · AI begrijpen, beoordelen en vormgeven</small>
+                </span>
+              </summary>
+
+              <div class="subject-body">
+                <div class="subject-detail-grid subject-detail-grid-three">
+                  <article>
+                    <h3>Kennis</h3>
+                    <p>
+                      Verschil tussen expliciete regels en machine learning. Kenmerken, normalisatie,
+                      clustering, k-means en het aantal clusters <em>k</em>. De invloed van dataset- en
+                      ontwerpkeuzes op modeluitkomsten.
+                    </p>
+                  </article>
+
+                  <article>
+                    <h3>Vaardigheden</h3>
+                    <p>
+                      Een clustermodel trainen, kenmerken en instellingen aanpassen, clusters vergelijken,
+                      een verklarende beslisboom lezen en controleren waar boom en clustering van elkaar afwijken.
+                    </p>
+                  </article>
+
+                  <article>
+                    <h3>Attitudes</h3>
+                    <p>
+                      Nieuwsgierig experimenteren, kritisch controleren, verantwoordelijk interpreteren
+                      en de eigen conclusie aanpassen wanneer data of modelresultaten daar aanleiding toe geven.
+                    </p>
+                  </article>
+                </div>
+
+                <div class="ailit-goals">
+                  <div class="ailit-heading">
+                    <div>
+                      <h3>Relevante AILit-competenties</h3>
+                      <p>De drie kerncompetenties van deze projectstap staan bovenaan.</p>
+                    </div>
+                  </div>
+
+                  <div class="ailit-grid">
+                    <article class="ailit-card is-core">
+                      <span class="ailit-code">Manage AI 2</span>
+                      <strong>Vergelijk AI-aanpakken</strong>
+                      <p>
+                        Vergelijk een regelgebaseerde aanpak met machine learning en bepaal welke aanpak
+                        geschikt is voor de taak.
+                      </p>
+                    </article>
+
+                    <article class="ailit-card is-core">
+                      <span class="ailit-code">Shape AI 2</span>
+                      <strong>Beoordeel het systeem</strong>
+                      <p>
+                        Gebruik criteria, verwachte uitkomsten en testgevallen om te beoordelen
+                        hoe bruikbaar en transparant het model is.
+                      </p>
+                    </article>
+
+                    <article class="ailit-card is-core">
+                      <span class="ailit-code">Shape AI 3</span>
+                      <strong>Onderzoek de invloed van data</strong>
+                      <p>
+                        Onderzoek hoe gekozen kenmerken, aantal datapunten en andere datasetkeuzes
+                        het gedrag en de output van het model beïnvloeden.
+                      </p>
+                    </article>
+
+                    <article class="ailit-card">
+                      <span class="ailit-code">Engage with AI 2</span>
+                      <strong>Beschrijf hoe het model werkt</strong>
+                      <p>
+                        Leg met correcte taal uit hoe k-means patronen gebruikt om datapunten te groeperen.
+                      </p>
+                    </article>
+
+                    <article class="ailit-card">
+                      <span class="ailit-code">Engage with AI 3</span>
+                      <strong>Aanvaarden, bijsturen of verwerpen</strong>
+                      <p>
+                        Controleer AI-uitkomsten en beargumenteer welke resultaten bruikbaar,
+                        twijfelachtig of onvoldoende zijn.
+                      </p>
+                    </article>
+
+                    <article class="ailit-card">
+                      <span class="ailit-code">Manage AI 4</span>
+                      <strong>Blijf evalueren</strong>
+                      <p>
+                        Vergelijk modeluitkomsten tijdens het onderzoek met de gewenste resultaten
+                        en stuur de aanpak bij wanneer dat nodig is.
+                      </p>
+                    </article>
+
+                    <article class="ailit-card">
+                      <span class="ailit-code">Shape AI 1</span>
+                      <strong>Ken doel en grenzen</strong>
+                      <p>
+                        Beschrijf waarvoor het model bedoeld is, welke invoer het gebruikt en welke
+                        conclusies het niet kan ondersteunen.
+                      </p>
+                    </article>
+                  </div>
+
+                  <div class="ailit-boundary">
+                    <strong>Belangrijke grens</strong>
+                    <p>
+                      Een cluster is een wiskundige groepering van gelijkaardige meetwaarden.
+                      Het model bepaalt niet zelfstandig of water “goed”, “slecht”, “veilig” of “vervuild” is.
+                      Die wetenschappelijke interpretatie vraagt extra kennis, gegevens en menselijk oordeel.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </details>
+          </div>
+        </section>
+
         <section class="learning-step-panel" id="step-reflecteren" hidden>
           <div class="learning-panel-heading">
-            <span class="learning-panel-number">5</span>
+            <span class="learning-panel-number">6</span>
             <div>
               <p class="section-kicker">Reflecteren</p>
-              <h2>Een besluit formuleren en begrenzen</h2>
+              <h2>Metingen, eigen code en AI naast elkaar leggen</h2>
             </div>
           </div>
 
@@ -298,6 +467,7 @@
             <details class="subject-accordion">
               <summary>
                 <span>
+                  <span class="subject-label">Vakleerplan</span>
                   <strong>Natuurwetenschappen</strong>
                   <small>Betrouwbaarheid, conclusie en onzekerheid</small>
                 </span>
@@ -323,8 +493,9 @@
             <details class="subject-accordion">
               <summary>
                 <span>
+                  <span class="subject-label">Vakleerplan</span>
                   <strong>Mens &amp; samenleving</strong>
-                  <small>Lokale waterkwaliteit als maatschappelijk thema</small>
+                  <small>Resultaten koppelen aan een maatschappelijk thema</small>
                 </span>
               </summary>
               <div class="subject-body">
@@ -345,13 +516,43 @@
                 </div>
               </div>
             </details>
+
+            <details class="subject-accordion subject-accordion-ai">
+              <summary>
+                <span>
+                  <span class="subject-label subject-label-ai">Aanvullend competentiekader</span>
+                  <strong>AI-geletterdheid</strong>
+                  <small>AI-uitkomsten kritisch vergelijken met wetenschappelijke gegevens en eigen redenering</small>
+                </span>
+              </summary>
+              <div class="subject-body">
+                <div class="subject-detail-grid">
+                  <article>
+                    <h3>Kennis</h3>
+                    <p>Een AI-uitkomst is een modelresultaat en geen automatische wetenschappelijke waarheid.</p>
+                  </article>
+                  <article>
+                    <h3>Vaardigheden</h3>
+                    <p>AI-resultaten controleren, naast andere bewijzen leggen en beargumenteren waarom je ze aanvaardt, nuanceert of verwerpt.</p>
+                  </article>
+                </div>
+                <div class="curriculum-goals curriculum-goals-ai">
+                  <h3>AILit-koppeling</h3>
+                  <p><strong>Engage with AI 3</strong> · AI-uitkomsten beoordelen en beslissen of ze worden aanvaard, bijgestuurd of verworpen.</p>
+                  <p><strong>Manage AI 4</strong> · AI-gebruik tijdens een probleemoplossend proces blijven opvolgen en evalueren.</p>
+                </div>
+              </div>
+            </details>
           </div>
         </section>
       </div>
 
       <p class="learning-source-note">
-        Leerplandoelen gebaseerd op de aangeleverde leerplannen Natuurwetenschappen B+S,
-        Informaticawetenschappen en Mens &amp; samenleving. 
+        Vakleerplandoelen zijn gebaseerd op de aangeleverde leerplannen Natuurwetenschappen B+S,
+        Informaticawetenschappen en Mens &amp; samenleving. De AI-geletterdheidskoppeling gebruikt het
+        <a href="https://ailiteracyframework.org/pdfs/framework_pdf/AILF_en.pdf" target="_blank" rel="noopener">AILit Framework</a>
+        van OECD en Europese Commissie. Het AILit-kader wordt hier als aanvullend competentiekader gebruikt,
+        niet als Vlaams vakleerplan.
       </p>
     </section>
   </main>
@@ -384,7 +585,6 @@
     });
 
     const stepButtons = [...document.querySelectorAll(".learning-step")];
-    const stepPanels = [...document.querySelectorAll(".learning-step-panel")];
     const emptyState = document.getElementById("learningEmpty");
 
     function closeStep(button, panel) {
