@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="nl-BE">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Project Water · Taken en leerplandoelen</title>
+  <meta
+    name="description"
+    content="Interactief overzicht van de projectstappen, vakken, kennis, vaardigheden en leerplandoelen van Project Water."
+  />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="shortcut icon" type="image/png" href="favicon.png">
+</head>
+
+<body class="landing-page learning-page">
+  <a class="skip-link" href="#main">Spring naar inhoud</a>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Hoofdnavigatie">
+      <a class="brand-link" href="index.html" aria-label="Project Water">
+        <div class="brand-copy">
+          <div class="brand-title">Project Water</div>
+          <div class="brand-subtitle">AI in de Klas - Robbe Wulgaert</div>
+        </div>
+      </a>
+
+      <button
+        class="menu-button"
+        id="menuButton"
+        type="button"
+        aria-expanded="false"
+        aria-controls="navLinks"
+        aria-label="Navigatie openen"
+      >
+        Menu
+      </button>
+
+      <div class="nav-panel" id="navLinks">
+        <div class="nav-links">
+          <a href="index.html#werking">Opdracht</a>
+          <a href="index.html#leren">Wat leer je?</a>
+          <a href="index.html#leerlijn">Leerlijn</a>
+          <a href="index.html#leerkrachten">Leerkrachten</a>
+        </div>
+        <div class="nav-actions">
+          <a class="btn btn-primary" href="platform.html">Start platform</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="section learning-overview">
+      <p class="section-kicker">Projectflow</p>
+      <h1 class="section-title">Van waterstaal tot besluit</h1>
+      <p class="section-lead">
+        Klik op een stap om te zien welke vakken eraan gekoppeld zijn.
+        Open daarna een vak voor de kennis, vaardigheden en leerplandoelen.
+      </p>
+
+      <div class="learning-flow" aria-label="Stappen van Project Water">
+        <button class="learning-step" type="button" data-step-target="verzamelen" aria-expanded="false">
+          <span class="learning-step-number">1</span>
+          <span class="learning-step-copy">
+            <strong>Verzamelen</strong>
+            <span>Waterstaal en context registreren</span>
+          </span>
+        </button>
+
+        <button class="learning-step" type="button" data-step-target="meten" aria-expanded="false">
+          <span class="learning-step-number">2</span>
+          <span class="learning-step-copy">
+            <strong>Meten</strong>
+            <span>pH meten en controleren</span>
+          </span>
+        </button>
+
+        <button class="learning-step" type="button" data-step-target="programmeren" aria-expanded="false">
+          <span class="learning-step-number">3</span>
+          <span class="learning-step-copy">
+            <strong>Programmeren</strong>
+            <span>Python-code schrijven en testen</span>
+          </span>
+        </button>
+
+        <button class="learning-step" type="button" data-step-target="analyseren" aria-expanded="false">
+          <span class="learning-step-number">4</span>
+          <span class="learning-step-copy">
+            <strong>Analyseren</strong>
+            <span>Klassendata vergelijken</span>
+          </span>
+        </button>
+
+        <button class="learning-step" type="button" data-step-target="reflecteren" aria-expanded="false">
+          <span class="learning-step-number">5</span>
+          <span class="learning-step-copy">
+            <strong>Reflecteren</strong>
+            <span>Hypothese en besluit vergelijken</span>
+          </span>
+        </button>
+      </div>
+
+      <div class="learning-detail-shell">
+        <div class="learning-empty" id="learningEmpty">
+          <strong>Kies een stap.</strong>
+          <span>De gekoppelde vakken verschijnen hier.</span>
+        </div>
+
+        <section class="learning-step-panel" id="step-verzamelen" hidden>
+          <div class="learning-panel-heading">
+            <span class="learning-panel-number">1</span>
+            <div>
+              <p class="section-kicker">Verzamelen</p>
+              <h2>Een bruikbaar waterstaal verzamelen</h2>
+            </div>
+          </div>
+
+          <div class="subject-list">
+            <details class="subject-accordion">
+              <summary>
+                <span>
+                  <strong>Natuurwetenschappen</strong>
+                  <small>Onderzoek opzetten en gegevens verzamelen</small>
+                </span>
+              </summary>
+              <div class="subject-body">
+                <div class="subject-detail-grid">
+                  <article>
+                    <h3>Kennis</h3>
+                    <p>Onderzoeksvraag, hypothese, meetlocatie en meetmoment als onderdelen van een onderzoek.</p>
+                  </article>
+                  <article>
+                    <h3>Vaardigheden</h3>
+                    <p>Een staal planmatig verzamelen, de context registreren en waarnemingen zorgvuldig bijhouden.</p>
+                  </article>
+                </div>
+                <div class="curriculum-goals">
+                  <h3>Leerplandoelen</h3>
+                  <p><strong>LPD 1 S</strong> · Onderzoek voeren met een wetenschappelijke methode om kennis te ontwikkelen en vragen te beantwoorden.</p>
+                </div>
+              </div>
+            </details>
+          </div>
+        </section>
+
+        <section class="learning-step-panel" id="step-meten" hidden>
+          <div class="learning-panel-heading">
+            <span class="learning-panel-number">2</span>
+            <div>
+              <p class="section-kicker">Meten</p>
+              <h2>Van waterstaal naar meetwaarde</h2>
+            </div>
+          </div>
+
+          <div class="subject-list">
+            <details class="subject-accordion">
+              <summary>
+                <span>
+                  <strong>Natuurwetenschappen</strong>
+                  <small>pH, meetnauwkeurigheid en veilig werken</small>
+                </span>
+              </summary>
+              <div class="subject-body">
+                <div class="subject-detail-grid">
+                  <article>
+                    <h3>Kennis</h3>
+                    <p>pH als meetwaarde, meetnauwkeurigheid en het belang van een correcte meetprocedure.</p>
+                  </article>
+                  <article>
+                    <h3>Vaardigheden</h3>
+                    <p>Een pH-sensor correct gebruiken, herhaalmetingen uitvoeren en meetwaarden zorgvuldig registreren.</p>
+                  </article>
+                </div>
+                <div class="curriculum-goals">
+                  <h3>Leerplandoelen</h3>
+                  <p><strong>LPD 2 S</strong> · Meetinstrumenten en hulpmiddelen met de nodige nauwkeurigheid gebruiken.</p>
+                  <p><strong>LPD 3 S</strong> · Gegevens en meetwaarden correct gebruiken.</p>
+                  <p><strong>LPD 4 S</strong> · Veilig en duurzaam werken met materialen, stoffen en technische systemen.</p>
+                </div>
+              </div>
+            </details>
+          </div>
+        </section>
+
+        <section class="learning-step-panel" id="step-programmeren" hidden>
+          <div class="learning-panel-heading">
+            <span class="learning-panel-number">3</span>
+            <div>
+              <p class="section-kicker">Programmeren</p>
+              <h2>De klassendata verwerken met Python</h2>
+            </div>
+          </div>
+
+          <div class="subject-list">
+            <details class="subject-accordion">
+              <summary>
+                <span>
+                  <strong>Informaticawetenschappen</strong>
+                  <small>Algoritmen, controlestructuren, testen en debuggen</small>
+                </span>
+              </summary>
+              <div class="subject-body">
+                <div class="subject-detail-grid">
+                  <article>
+                    <h3>Kennis</h3>
+                    <p>Algoritme, sequentie, selectie en iteratie. In het project werken leerlingen ook met lijsten, tellers en variabelen.</p>
+                  </article>
+                  <article>
+                    <h3>Vaardigheden</h3>
+                    <p>Een probleem opdelen, een algoritme ontwerpen, Python-code implementeren en de oplossing testen en debuggen.</p>
+                  </article>
+                </div>
+                <div class="curriculum-goals">
+                  <h3>Leerplandoelen</h3>
+                  <p><strong>LPD 1 +</strong> · Systematisch oplossingen ontwerpen en programma's implementeren voor concrete problemen.</p>
+                  <p><strong>LPD 2</strong> · Een gestructureerde programmeertaal toepassen bij het ontwerpen van oplossingen.</p>
+                </div>
+              </div>
+            </details>
+          </div>
+        </section>
+
+        <section class="learning-step-panel" id="step-analyseren" hidden>
+          <div class="learning-panel-heading">
+            <span class="learning-panel-number">4</span>
+            <div>
+              <p class="section-kicker">Analyseren</p>
+              <h2>Verschillen en patronen in de data zoeken</h2>
+            </div>
+          </div>
+
+          <div class="subject-list">
+            <details class="subject-accordion">
+              <summary>
+                <span>
+                  <strong>Informaticawetenschappen</strong>
+                  <small>Code gebruiken om klassendata te vergelijken</small>
+                </span>
+              </summary>
+              <div class="subject-body">
+                <div class="subject-detail-grid">
+                  <article>
+                    <h3>Kennis</h3>
+                    <p>Iteratie en selectie als bouwstenen om waarden te doorlopen, te vergelijken en te classificeren.</p>
+                  </article>
+                  <article>
+                    <h3>Vaardigheden</h3>
+                    <p>Code schrijven die lijsten verwerkt, telt, vergelijkt en resultaten controleerbaar maakt.</p>
+                  </article>
+                </div>
+                <div class="curriculum-goals">
+                  <h3>Leerplandoelen</h3>
+                  <p><strong>LPD 1 +</strong> · Een systematiek hanteren bij ontwerp, implementatie, testen en debuggen.</p>
+                  <p><strong>LPD 2</strong> · Controlestructuren doelgericht toepassen in een gestructureerde programmeertaal.</p>
+                </div>
+              </div>
+            </details>
+
+            <details class="subject-accordion">
+              <summary>
+                <span>
+                  <strong>Natuurwetenschappen</strong>
+                  <small>Meetgegevens analyseren en een hypothese toetsen</small>
+                </span>
+              </summary>
+              <div class="subject-body">
+                <div class="subject-detail-grid">
+                  <article>
+                    <h3>Kennis</h3>
+                    <p>Het verband tussen hypothese, waarneming, meetgegevens en conclusie.</p>
+                  </article>
+                  <article>
+                    <h3>Vaardigheden</h3>
+                    <p>Meetgegevens analyseren, resultaten vergelijken en nagaan of de data de hypothese ondersteunen.</p>
+                  </article>
+                </div>
+                <div class="curriculum-goals">
+                  <h3>Leerplandoelen</h3>
+                  <p><strong>LPD 1 S</strong> · Data analyseren, conclusies trekken en een hypothese aftoetsen binnen wetenschappelijk onderzoek.</p>
+                  <p><strong>LPD 3 S</strong> · Gegevens en meetwaarden correct gebruiken.</p>
+                </div>
+              </div>
+            </details>
+          </div>
+        </section>
+
+        <section class="learning-step-panel" id="step-reflecteren" hidden>
+          <div class="learning-panel-heading">
+            <span class="learning-panel-number">5</span>
+            <div>
+              <p class="section-kicker">Reflecteren</p>
+              <h2>Een besluit formuleren en begrenzen</h2>
+            </div>
+          </div>
+
+          <div class="subject-list">
+            <details class="subject-accordion">
+              <summary>
+                <span>
+                  <strong>Natuurwetenschappen</strong>
+                  <small>Betrouwbaarheid, conclusie en onzekerheid</small>
+                </span>
+              </summary>
+              <div class="subject-body">
+                <div class="subject-detail-grid">
+                  <article>
+                    <h3>Kennis</h3>
+                    <p>Betrouwbare kennis ontstaat door hypotheses en verklaringen te confronteren met waarnemingen en metingen.</p>
+                  </article>
+                  <article>
+                    <h3>Vaardigheden</h3>
+                    <p>Een conclusie formuleren, beperkingen benoemen en reflecteren over methode en resultaten.</p>
+                  </article>
+                </div>
+                <div class="curriculum-goals">
+                  <h3>Leerplandoelen</h3>
+                  <p><strong>LPD 1 S</strong> · Reflecteren en communiceren over de gekozen methodologie en de resultaten van onderzoek.</p>
+                </div>
+              </div>
+            </details>
+
+            <details class="subject-accordion">
+              <summary>
+                <span>
+                  <strong>Mens &amp; samenleving</strong>
+                  <small>Lokale waterkwaliteit als maatschappelijk thema</small>
+                </span>
+              </summary>
+              <div class="subject-body">
+                <div class="subject-detail-grid">
+                  <article>
+                    <h3>Kennis</h3>
+                    <p>Een maatschappelijk thema kan vanuit informatie, verschillende perspectieven en argumenten worden bekeken.</p>
+                  </article>
+                  <article>
+                    <h3>Vaardigheden</h3>
+                    <p>Een eigen standpunt onderbouwen met informatie en daarover geïnformeerd en constructief in dialoog gaan.</p>
+                  </article>
+                </div>
+                <div class="curriculum-goals">
+                  <h3>Leerplandoelen</h3>
+                  <p><strong>LPD 10</strong> · Een eigen standpunt verwoorden over maatschappelijke thema's vanuit aangereikte informatie.</p>
+                  <p><strong>LPD 11</strong> · Geïnformeerd, beargumenteerd en constructief in dialoog gaan over maatschappelijke thema's.</p>
+                </div>
+              </div>
+            </details>
+          </div>
+        </section>
+      </div>
+
+      <p class="learning-source-note">
+        Leerplandoelen gebaseerd op de aangeleverde leerplannen Natuurwetenschappen B+S,
+        Informaticawetenschappen en Mens &amp; samenleving. 
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-title">Project Water</div>
+        <p>© 2026 Robbe Wulgaert · AI in de Klas</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Landing page</a>
+        <a href="platform.html">Onderzoeksplatform</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.getElementById("menuButton");
+    const navLinks = document.getElementById("navLinks");
+
+    function setMenuState(isOpen) {
+      navLinks?.classList.toggle("is-open", isOpen);
+      menuButton?.setAttribute("aria-expanded", String(isOpen));
+      menuButton?.setAttribute("aria-label", isOpen ? "Navigatie sluiten" : "Navigatie openen");
+    }
+
+    menuButton?.addEventListener("click", () => {
+      setMenuState(!navLinks?.classList.contains("is-open"));
+    });
+
+    const stepButtons = [...document.querySelectorAll(".learning-step")];
+    const stepPanels = [...document.querySelectorAll(".learning-step-panel")];
+    const emptyState = document.getElementById("learningEmpty");
+
+    function closeStep(button, panel) {
+      button.classList.remove("is-active");
+      button.setAttribute("aria-expanded", "false");
+      panel.hidden = true;
+      panel.querySelectorAll("details[open]").forEach((detail) => detail.removeAttribute("open"));
+    }
+
+    stepButtons.forEach((button) => {
+      const panel = document.getElementById(`step-${button.dataset.stepTarget}`);
+      button.setAttribute("aria-controls", panel.id);
+
+      button.addEventListener("click", () => {
+        const willOpen = !button.classList.contains("is-active");
+
+        stepButtons.forEach((otherButton) => {
+          const otherPanel = document.getElementById(`step-${otherButton.dataset.stepTarget}`);
+          closeStep(otherButton, otherPanel);
+        });
+
+        if (!willOpen) {
+          emptyState.hidden = false;
+          return;
+        }
+
+        emptyState.hidden = true;
+        button.classList.add("is-active");
+        button.setAttribute("aria-expanded", "true");
+        panel.hidden = false;
+
+        if (window.matchMedia("(max-width: 760px)").matches) {
+          requestAnimationFrame(() => {
+            panel.scrollIntoView({ behavior: "smooth", block: "start" });
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
