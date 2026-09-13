@@ -1,0 +1,567 @@
+<!doctype html>
+<!--
+  Project Water
+  Copyright (c) 2026 Robbe Wulgaert
+-->
+<html lang="nl-BE">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Project Water</title>
+  <meta
+    name="description"
+    content="Project Water laat leerlingen van 14 tot 16 jaar waterstalen verzamelen, pH meten met Arduino en klassendata onderzoeken met Python."
+  />
+  <meta name="author" content="Robbe Wulgaert, AI in de Klas, robbewulgaert.be" />
+  <meta name="copyright" content="Copyright (c) 2026 Robbe Wulgaert" />
+  <meta name="robots" content="index, follow" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="nl_BE" />
+  <meta property="og:site_name" content="AI in de Klas" />
+  <meta property="og:title" content="Project Water" />
+  <meta
+    property="og:description"
+    content="Verzamel waterstalen, meet pH, schrijf Python-code en test jouw hypothese met de data van de klas."
+  />
+  <meta property="og:image" content="media/example_hero_image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Project Water" />
+  <meta
+    name="twitter:description"
+    content="Verzamel waterstalen, meet pH, schrijf Python-code en test jouw hypothese met de data van de klas."
+  />
+  <meta name="twitter:image" content="media/example_hero_image.png" />
+
+  <!-- Leaflet is only used for the small indicative map of Ghent. -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+  />
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="shortcut icon" type="image/png" href="favicon.png">
+</head>
+
+<body class="landing-page">
+  <a class="skip-link" href="#main">Spring naar inhoud</a>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Hoofdnavigatie">
+      <a class="brand-link" href="https://robbew.github.io/projectwater/" aria-label="Project Water">
+        <div class="brand-copy">
+          <div class="brand-title">Project Water</div>
+          <div class="brand-subtitle">AI in de Klas - Robbe Wulgaert</div>
+        </div>
+      </a>
+
+      <button
+        class="menu-button"
+        id="menuButton"
+        type="button"
+        aria-expanded="false"
+        aria-controls="navLinks"
+        aria-label="Navigatie openen"
+      >
+        <span class="menu-lines" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </span>
+      </button>
+
+      <div class="nav-panel" id="navLinks">
+        <div class="nav-links">
+          <a href="#werking">Opdracht</a>
+          <a href="#leren">Wat leer je?</a>
+          <a href="#leerlijn">Leerlijn</a>
+          <a href="#leerkrachten">Leerkrachten</a>
+        </div>
+        <div class="nav-actions">
+          <a class="btn btn-primary" href="platform.html">Start platform</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="landing-hero" id="top" aria-label="Project Water">
+      <div class="hero-content">
+        <p class="section-kicker">Project Water</p>
+        <h1>Verzamel stalen. Schrijf code. Test jouw hypothese.</h1>
+        <p class="hero-lead">
+          Meet de pH van verschillende waterstalen, bundel de metingen van de klas
+          en gebruik Python om de data te onderzoeken.
+        </p>
+        <div class="hero-actions" aria-label="Belangrijke acties">
+          <a class="btn btn-primary" href="platform.html">Start platform</a>
+          <a class="btn btn-secondary" href="#werking">Bekijk de opdracht</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="werking">
+      <p class="section-kicker">Hoe werkt het?</p>
+      <h2 class="section-title">Verzamel, meet, ontwikkel en vergelijk</h2>
+      <p class="section-lead">
+        Leerlingen werken in duo's. Ze verzamelen waterstalen, meten de pH en voegen hun metingen samen.
+        Daarna gebruiken ze de klassendata in Python.
+      </p>
+
+      <div class="steps">
+        <article class="step-card">
+          <div class="step-number">1</div>
+          <h3 class="card-title">Verzamel</h3>
+          <p class="card-copy">
+            Neem een waterstaal en noteer waar en wanneer je het verzamelde.
+          </p>
+        </article>
+
+        <article class="step-card">
+          <div class="step-number">2</div>
+          <h3 class="card-title">Meet</h3>
+          <p class="card-copy">
+            Meet de pH met de sensor en voer dezelfde meting enkele keren uit.
+          </p>
+        </article>
+
+        <article class="step-card">
+          <div class="step-number">3</div>
+          <h3 class="card-title">Ontwikkel</h3>
+          <p class="card-copy">
+            Schrijf Python-code die de klassendata doorloopt, telt en vergelijkt.
+          </p>
+        </article>
+
+        <article class="step-card">
+          <div class="step-number">4</div>
+          <h3 class="card-title">Analyseer</h3>
+          <p class="card-copy">
+            Zoek verschillen tussen plaatsen, stalen en meetmomenten.
+          </p>
+        </article>
+
+        <article class="step-card">
+          <div class="step-number">5</div>
+          <h3 class="card-title">Reflecteer</h3>
+          <p class="card-copy">
+            Vergelijk je hypothese met de data en noteer wat je wel en niet kan besluiten.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section media-section" aria-label="Opstelling">
+      <div class="split">
+        <article class="audience-card">
+          <p class="section-kicker">De opstelling</p>
+          <h2 class="section-title">Aan de slag met een pH-sensor</h2>
+          <p class="section-lead">
+            Een pH-sensor meet hoe zuur of basisch een waterstaal is.
+            De Arduino leest de sensor uit en stuurt de meetwaarde naar de browser.
+          </p>
+
+          <ul class="bullet-list">
+            <li>pH-sensor of pH-probe met geschikte interface.</li>
+            <li>Arduino Uno of compatibele microcontroller met USB-datakabel.</li>
+            <li>Waterstalen in propere, gelabelde recipiënten.</li>
+            <li>Schoollaptop met een moderne browser.</li>
+          </ul>
+        </article>
+
+        <figure class="setup-photo-frame">
+          <img
+            src="media/example_schematic_image.png"
+            alt="Opstelling met pH-sensor, Arduino en waterstalen"
+          />
+        </figure>
+      </div>
+    </section>
+
+    <section class="section photo-section" id="beelden">
+      <p class="section-kicker">In beeld</p>
+      <h2 class="section-title">Meten in het labo, analyseren in de browser</h2>
+      <p class="section-lead">
+        Leerlingen werken met echte waterstalen, een pH-sensor en een Arduino.
+        Dezelfde klassendata gebruiken ze daarna in Python.
+      </p>
+
+      <div class="media-gallery">
+        <figure class="photo-card">
+          <img
+            src="media/example_hero_image.png"
+            alt="Leerling meet waterstalen met een pH-sensor en Arduino in een labo"
+          />
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="locaties">
+      <p class="section-kicker">Voorbeeldlocaties</p>
+      <h2 class="section-title">Waar kan je in Gent een staal nemen?</h2>
+      <p class="section-lead">
+        De kaart toont enkele mogelijke locaties. Klik op een locatie of op een marker om ze op de kaart te bekijken.
+        De punten zijn voorbeelden en bevatten geen echte meetresultaten.
+      </p>
+
+      <div class="map-wrap">
+        <div class="map-toolbar">
+          <p class="map-toolbar-title">Voorbeeldlocaties</p>
+          <p class="map-toolbar-help">Klik op een locatie om de kaart ernaartoe te verplaatsen.</p>
+          <div class="map-location-buttons" id="mapLocationButtons" aria-label="Voorbeeldlocaties in Gent"></div>
+        </div>
+
+        <div
+          id="gentMap"
+          class="water-map"
+          role="region"
+          aria-label="Kaart met voorbeeldlocaties voor waterstalen in Gent"
+        ></div>
+
+        <p class="map-status" id="mapStatus" aria-live="polite">
+          Kaart laden...
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="leren">
+      <p class="section-kicker">Wat leer je?</p>
+      <h2 class="section-title">Wat oefenen leerlingen?</h2>
+
+      <div class="feature-grid">
+        <article class="feature-card">
+          <div class="feature-icon">01</div>
+          <h3 class="card-title">Meten met sensoren</h3>
+          <p class="card-copy">
+            Leerlingen voeren meerdere metingen uit en vergelijken de resultaten.
+          </p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon">02</div>
+          <h3 class="card-title">Python en data</h3>
+          <p class="card-copy">
+            Ze werken met lijsten, <code>for</code>, <code>range</code>, <code>if</code>, tellers en totalen.
+          </p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon">03</div>
+          <h3 class="card-title">Onderzoeken</h3>
+          <p class="card-copy">
+            Ze formuleren een hypothese, verzamelen gegevens en zoeken verschillen tussen waterstalen.
+          </p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon">04</div>
+          <h3 class="card-title">Besluiten</h3>
+          <p class="card-copy">
+            Ze gebruiken hun eigen data om een besluit te schrijven en benoemen wat nog onzeker is.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section curriculum-section" id="leerlijn">
+      <p class="section-kicker">Plaats in de leerlijn</p>
+      <h2 class="section-title">Van platformen naar projecten.</h2>
+      <p class="section-lead">
+        De platformen bouwen het computationeel denken op. De projecten gebruiken dat denken in een
+        vakoverschrijdende opdracht waarin leerlingen bouwen, meten, testen en besluiten.
+      </p>
+
+      <div class="family-tree" aria-label="Leerlijn van platformen en projecten">
+        <div class="tree-root">
+          <a class="tree-node root" href="https://www.aiindeklas.be" target="_blank" rel="noopener">
+            <strong>Leren computationeel denken</strong>
+            <span>van blokken naar code, van code naar onderzoek</span>
+          </a>
+        </div>
+
+        <div class="tree-branches">
+          <div class="tree-branch">
+            <div class="branch-title">Platformen</div>
+            <div class="tree-stack">
+              <a class="tree-node" href="https://robbew.github.io/Blockly/" target="_blank" rel="noopener">
+                <strong>Blockly</strong>
+                <span>visueel denken in stappen.</span>
+              </a>
+
+              <a class="tree-node" href="https://robbew.github.io/jsindeklas/" target="_blank" rel="noopener">
+                <strong>JavaScript</strong>
+                <span>logica in echte code.</span>
+              </a>
+
+              <a class="tree-node" href="https://robbew.github.io/htmlindeklas/" target="_blank" rel="noopener">
+                <strong>HTML</strong>
+                <span>webpagina's structureren.</span>
+              </a>
+
+              <div class="delphi-dodona-pair" aria-label="Dodona en Delphi">
+                <a class="tree-node" href="https://dodona.be/nl/courses/2641/" target="_blank" rel="noopener">
+                  <strong>Dodona</strong>
+                  <span>Python in de Klas met opvolging.</span>
+                </a>
+
+                <a class="tree-node" href="https://robbew.github.io/delphi/" target="_blank" rel="noopener">
+                  <strong>Delphi</strong>
+                  <span>Python oefenen in de browser.</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="tree-branch">
+            <div class="branch-title">STEaM-projecten</div>
+            <div class="tree-stack">
+              <a class="tree-node" href="https://robbew.github.io/smartplants/" target="_blank" rel="noopener">
+                <strong>Smart Plants</strong>
+                <span>Arduino, bodemvochtigheid, kalibratie en data.</span>
+              </a>
+
+              <a class="tree-node" href="https://robbew.github.io/robothand/" target="_blank" rel="noopener">
+                <strong>Robothand</strong>
+                <span>Arduino, sensoren, servo's en beweging.</span>
+              </a>
+
+              <a class="tree-node" href="https://robbew.github.io/projectwind/" target="_blank" rel="noopener">
+                <strong>Wind</strong>
+                <span>Micro:bit, energie, spanning en stroom.</span>
+              </a>
+
+              <a class="tree-node" href="https://robbew.github.io/slimme_vuilnisbak/" target="_blank" rel="noopener">
+                <strong>Slimme vuilnisbak</strong>
+                <span>AI, beeldherkenning, data en microcontrollers.</span>
+              </a>
+
+              <a class="tree-node current" href="https://robbew.github.io/projectwater/" aria-current="page">
+                <strong>Project Water</strong>
+                <span>pH, Arduino, Python en klassendata.</span>
+              </a>
+
+              <a class="tree-node" href="https://robbew.github.io/projectfijnstof/" target="_blank" rel="noopener">
+                <strong>Fijnstof</strong>
+                <span>Arduino, luchtkwaliteit, data en postersessie.</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="logic-note">
+          De platformen trainen computationeel denken. De projecten laten leerlingen dat denken inzetten in een vakoverschrijdende opdracht.
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="leerkrachten">
+      <article class="audience-card">
+        <p class="section-kicker">Voor leerkrachten</p>
+        <h2 class="section-title">Snel inzetbaar in de klas.</h2>
+        <p class="section-lead">
+          De opdracht is gemaakt voor leerlingen van ongeveer 14–16 jaar.
+          Binnen Natuurwetenschappen, zoals biologie en chemie, onderzoeken leerlingen de waterstalen en de metingen.
+          Binnen Informaticawetenschappen verwerken ze de klassendata met Python.
+        </p>
+
+        <ul class="bullet-list">
+          <li>Geschikt voor samenwerking tussen Natuurwetenschappen, Informaticawetenschappen en STEM.</li>
+          <li>Leerlingen werken met eigen stalen en eventueel met referentie- of mysteriestalen van de leerkracht.</li>
+          <li>De klassendata worden samengevoegd en daarna opnieuw gebruikt in de programmeeroefeningen.</li>
+          <li>Python draait in de browser; leerlingen hoeven lokaal geen Python te installeren.</li>
+          <li>De kaart en tijdlijn helpen om de resultaten van de geschreven code verder te onderzoeken.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="section" id="privacy-license">
+      <h2 class="section-title">Privacy en licentie</h2>
+
+      <div class="privacy-license-list">
+        <details class="feature-card privacy-license-details">
+          <summary>Privacy</summary>
+          <div class="privacy-license-content">
+            <p>
+              Meetgegevens worden in de browser verwerkt. Als leerlingen een foto gebruiken om plaats en tijd van een staal voor te stellen,
+              lezen we alleen de gegevens die daarvoor nodig zijn. De leerling controleert die informatie zelf.
+            </p>
+            <p>
+              De klassendataset gebruikt groepscodes in plaats van leerlingnamen voordat die opnieuw met de klas wordt gedeeld.
+              De kaart op deze landingspagina gebruikt kaarttegels van OpenStreetMap; daarbij gelden ook de voorwaarden van die externe dienst.
+            </p>
+          </div>
+        </details>
+
+        <details class="feature-card privacy-license-details">
+          <summary>Licentie</summary>
+          <div class="privacy-license-content">
+            <p>
+              Het oorspronkelijke projectmateriaal van Robbe Wulgaert mag gratis worden gebruikt, gekopieerd en aangepast voor onderwijs,
+              op voorwaarde dat “Robbe Wulgaert – AI in de Klas” duidelijk zichtbaar wordt vermeld.
+              Componenten van derden blijven onder hun eigen licenties vallen.
+            </p>
+            <p><a href="LICENSE.md">Lees de volledige licentievoorwaarden.</a></p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Start">
+      <div class="cta-band">
+        <div>
+          <h2>Open het onderzoeksplatform.</h2>
+          <p>
+            Verzamel een staal, voer je metingen in en gebruik de klassendata in Python.
+          </p>
+        </div>
+        <div class="cta-actions">
+          <a class="btn btn-primary" href="platform.html">Start platform</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-title">Project Water</div>
+        <p>
+          Auteur: Robbe Wulgaert - AI in de Klas - robbewulgaert.be<br />
+          © 2026 Robbe Wulgaert. Educatief gebruik met naamsvermelding; geen commerciële verspreiding.
+        </p>
+      </div>
+
+      <div class="footer-links" aria-label="Footerlinks">
+        <a href="#privacy-license">Privacy en licentie</a>
+        <a href="https://www.robbewulgaert.be">robbewulgaert.be</a>
+        <a href="https://www.aiindeklas.be">AI in de Klas</a>
+        <a href="platform.html">Onderzoeksplatform</a>
+      </div>
+    </div>
+  </footer>
+
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""
+  ></script>
+
+  <script>
+    const menuButton = document.getElementById("menuButton");
+    const navLinks = document.getElementById("navLinks");
+
+    function setMenuState(isOpen) {
+      navLinks.classList.toggle("is-open", isOpen);
+      menuButton.setAttribute("aria-expanded", String(isOpen));
+      menuButton.setAttribute("aria-label", isOpen ? "Navigatie sluiten" : "Navigatie openen");
+    }
+
+    menuButton?.addEventListener("click", () => {
+      setMenuState(!navLinks.classList.contains("is-open"));
+    });
+
+    navLinks?.addEventListener("click", (event) => {
+      if (event.target instanceof HTMLAnchorElement) setMenuState(false);
+    });
+
+    document.addEventListener("click", (event) => {
+      if (
+        navLinks?.classList.contains("is-open") &&
+        !navLinks.contains(event.target) &&
+        !menuButton?.contains(event.target)
+      ) {
+        setMenuState(false);
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && navLinks?.classList.contains("is-open")) {
+        setMenuState(false);
+        menuButton.focus();
+      }
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.matchMedia("(min-width: 761px)").matches) setMenuState(false);
+    });
+
+    // Gebaseerd op de kaartaanpak uit het Garensteeg 2-project:
+    // Leaflet, OpenStreetMap-tegels, uitgeschakelde scroll-zoom,
+    // eigen divIcon-markers en een compacte statusbalk.
+    const sampleLocations = [
+      { id: "dok-noord", name: "Dok Noord", coords: [51.06666, 3.73361] },
+      { id: "portus-ganda", name: "Portus Ganda", coords: [51.05575, 3.73358] },
+      { id: "keizerpark", name: "Keizerpark", coords: [51.04275, 3.74159] },
+      { id: "de-krook", name: "De Krook", coords: [51.04905, 3.72879] },
+      { id: "watersportbaan", name: "Watersportbaan", coords: [51.04934, 3.69024] },
+      { id: "coupure", name: "Coupure", coords: [51.04988, 3.71277] }
+    ];
+
+    const mapElement = document.getElementById("gentMap");
+    const mapStatus = document.getElementById("mapStatus");
+    const mapLocationButtons = document.getElementById("mapLocationButtons");
+
+    if (window.L && mapElement) {
+      const map = L.map(mapElement, {
+        scrollWheelZoom: false,
+        zoomControl: true
+      });
+
+      L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>-bijdragers',
+        maxZoom: 19
+      }).addTo(map);
+
+      const markerIcon = L.divIcon({
+        className: "sample-map-marker",
+        html: '<span aria-hidden="true"></span>',
+        iconSize: [22, 22],
+        iconAnchor: [11, 11],
+        popupAnchor: [0, -12]
+      });
+
+      const markers = new Map();
+
+      sampleLocations.forEach((location) => {
+        const marker = L.marker(location.coords, {
+          icon: markerIcon,
+          keyboard: true,
+          title: location.name,
+          alt: `Voorbeeldlocatie ${location.name}`
+        })
+          .bindPopup(`<strong>${location.name}</strong><br>Voorbeeldlocatie voor een waterstaal.`)
+          .addTo(map);
+
+        markers.set(location.id, marker);
+
+        if (mapLocationButtons) {
+          const button = document.createElement("button");
+          button.type = "button";
+          button.className = "map-location-button";
+          button.textContent = location.name;
+          button.addEventListener("click", () => {
+            map.setView(location.coords, 15, { animate: true });
+            marker.openPopup();
+          });
+          mapLocationButtons.appendChild(button);
+        }
+      });
+
+      const bounds = L.latLngBounds(sampleLocations.map((location) => location.coords));
+      map.fitBounds(bounds.pad(0.12), { maxZoom: 14 });
+
+      requestAnimationFrame(() => {
+        map.invalidateSize({ pan: false });
+      });
+
+      if (mapStatus) {
+        mapStatus.textContent = "Sleep de kaart of gebruik de zoomknoppen om de locaties te verkennen.";
+      }
+    } else if (mapStatus) {
+      mapStatus.textContent = "De kaart kon niet worden geladen. De voorbeeldlocaties blijven hierboven beschikbaar.";
+    }
+  </script>
+</body>
+</html>
