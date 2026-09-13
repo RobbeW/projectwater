@@ -3256,23 +3256,6 @@ th {
   background: linear-gradient(135deg, var(--brand), #03ddef);
 }
 
-.ai-method-note {
-  margin-bottom: 1rem;
-  border: 1px solid rgba(3, 221, 239, 0.32);
-  border-radius: 16px;
-  padding: 1rem 1.1rem;
-  background: rgba(3, 221, 239, 0.07);
-}
-
-.ai-method-note strong {
-  color: var(--ink);
-}
-
-.ai-method-note p {
-  margin: 0.4rem 0 0;
-  color: #51495f;
-  line-height: 1.6;
-}
 
 .subject-accordion-ai {
   border-color: rgba(3, 221, 239, 0.36);
@@ -3503,5 +3486,199 @@ th {
   .learning-flow {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+}
+
+
+
+/* Project Water — leerdoelen layout fixes */
+
+/* Keep each of the six steps readable inside its own card.
+   The number sits above the copy so long titles do not collide with it. */
+@media (min-width: 901px) {
+  .learning-step {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-content: start;
+    justify-items: start;
+    gap: 0.75rem;
+    min-width: 0;
+    min-height: 158px;
+    padding: 0.95rem;
+    overflow: hidden;
+  }
+
+  .learning-step-number {
+    width: 38px;
+    height: 38px;
+  }
+
+  .learning-step-copy {
+    width: 100%;
+    min-width: 0;
+    gap: 0.4rem;
+  }
+
+  .learning-step-copy strong,
+  .learning-step-copy span {
+    display: block;
+    max-width: 100%;
+    white-space: normal;
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
+
+  .learning-step-copy strong {
+    font-size: 0.98rem;
+    line-height: 1.18;
+  }
+
+  .learning-step-copy span {
+    font-size: 0.81rem;
+    line-height: 1.42;
+  }
+}
+
+/* Draw the plus/minus instead of relying on a font glyph.
+   This keeps the symbol optically centred in the circular control. */
+.subject-accordion summary::after {
+  content: "";
+  flex: 0 0 34px;
+  width: 34px;
+  height: 34px;
+  box-sizing: border-box;
+  border-radius: 999px;
+  background:
+    linear-gradient(var(--brand), var(--brand)) center / 12px 2px no-repeat,
+    linear-gradient(var(--brand), var(--brand)) center / 2px 12px no-repeat,
+    var(--brand-soft);
+}
+
+.subject-accordion[open] summary::after {
+  content: "";
+  background:
+    linear-gradient(var(--brand), var(--brand)) center / 12px 2px no-repeat,
+    var(--brand-soft);
+}
+
+@media (max-width: 900px) {
+  .learning-step {
+    overflow: hidden;
+  }
+
+  .learning-step-copy {
+    min-width: 0;
+  }
+
+  .learning-step-copy strong,
+  .learning-step-copy span {
+    white-space: normal;
+    overflow-wrap: break-word;
+  }
+}
+
+
+/* Project Water — final leerdoelen presentation fixes */
+
+/* Six project steps: preserve one row on desktop, but allow every label to wrap
+   naturally without colliding with the number or escaping its card. */
+@media (min-width: 901px) {
+  .learning-flow {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    align-items: stretch;
+  }
+
+  .learning-step {
+    min-width: 0;
+    min-height: 172px;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    align-content: start;
+    justify-items: start;
+    gap: 0.75rem;
+    padding: 0.95rem;
+    overflow: visible;
+  }
+
+  .learning-step-number {
+    width: 38px;
+    height: 38px;
+  }
+
+  .learning-step-copy {
+    width: 100%;
+    min-width: 0;
+    display: grid;
+    align-content: start;
+    gap: 0.4rem;
+  }
+
+  .learning-step-copy strong,
+  .learning-step-copy span {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    white-space: normal;
+    word-break: normal;
+    overflow-wrap: anywhere;
+    hyphens: auto;
+  }
+
+  .learning-step-copy strong {
+    font-size: clamp(0.88rem, 0.9vw, 0.98rem);
+    line-height: 1.2;
+  }
+
+  .learning-step-copy span {
+    font-size: clamp(0.76rem, 0.76vw, 0.82rem);
+    line-height: 1.42;
+  }
+}
+
+/* At tablet sizes use a balanced 3 × 2 grid. */
+@media (min-width: 621px) and (max-width: 900px) {
+  .learning-flow {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .learning-step {
+    min-width: 0;
+    height: 100%;
+  }
+
+  .learning-step-copy {
+    min-width: 0;
+  }
+
+  .learning-step-copy strong,
+  .learning-step-copy span {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+}
+
+/* Centre the + / − optically inside the circular accordion control.
+   The symbol is drawn with background lines instead of a font glyph. */
+.subject-accordion summary::after {
+  content: "";
+  flex: 0 0 36px;
+  width: 36px;
+  height: 36px;
+  align-self: center;
+  box-sizing: border-box;
+  border-radius: 50%;
+  background:
+    linear-gradient(var(--brand), var(--brand)) center / 12px 2px no-repeat,
+    linear-gradient(var(--brand), var(--brand)) center / 2px 12px no-repeat,
+    var(--brand-soft);
+}
+
+.subject-accordion[open] summary::after {
+  content: "";
+  background:
+    linear-gradient(var(--brand), var(--brand)) center / 12px 2px no-repeat,
+    var(--brand-soft);
 }
 
